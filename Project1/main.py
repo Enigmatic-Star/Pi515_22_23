@@ -8,23 +8,24 @@ while keepAsking:
     if num.isdigit():
         print("Let's play!")
         num = int(num)
-        # something about the loop condition
+        keepAsking = False
     else:
         print("Invalid input. Try again.")
-
-secret = random.randint(1, num)
+sec = num-1
+secret = random.randint(2, sec)
 guess = None
 count = 1
+print("Secret #", secret)
 
 while guess != secret:
     guess = input("Type a number between 1 and " + str(num) + ": ")
     if guess.isdigit():
         guess = int(guess)
-    if False: # can't always be wrong
+    if guess == secret:
         print("You got it!")
     else:
         print("Try again.")
-        # what else?
+        count += 1
 
 if count == 1:
     print("It took you", count, "guess!")
