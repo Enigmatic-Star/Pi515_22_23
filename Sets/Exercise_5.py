@@ -5,7 +5,7 @@ rivalMenu = {'Pasta', 'Pizza', 'Salad', 'Water', 'Soda'}
 
 # 1. Find if the menu is different
 
-print('Is Different?: ')
+print('Is Different?: ', not ourMenu.isdisjoint(rivalMenu))
 
 # 2. Find the unique items on our menu
 

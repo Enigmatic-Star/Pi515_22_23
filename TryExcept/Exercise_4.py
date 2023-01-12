@@ -1,3 +1,4 @@
+n=23
 def enforce_even(n):
   """
   Checks if n is even and raises an
@@ -8,8 +9,9 @@ def enforce_even(n):
   in a%b.
   """
   # Implement the function
-
-
+  if n%2 !=0:
+    #print(n%2)
+    raise Exception("oops")
 try:
   enforce_even(3)
 except:

@@ -1,5 +1,6 @@
 # import modules
 import os
+import random
 
 # Clears shell terminal
 def clear():
@@ -12,7 +13,25 @@ class Player:
     self.name = name
     self.score = 0
 
+class Crop:
 
+  name = ''
+  score = 0
+  pic = '\|/'
+  
+class Wheat(Crop):
+
+  def __init__(self):
+    self.name = 'Wheat'
+    self.score = 10
+    
+class Ragweed(Crop):
+
+  def __init__(self):
+    self.name = 'Ragweed'
+    self.score = -5
+
+    
 # Program Start
 # Player enters name
 playerName = input('Please enter your name\n')
@@ -27,16 +46,20 @@ userIn = ''
 # Game loop
 while userIn != 'quit' and userIn != 'q':
   # Print player info at top of screen
-  print(p1)
+  print(p1.name)
+  print('Score', p1.score)
 
+  randNum = random.randint(0, 1)
+  plantObj = Wheat()
+
+  if randNum == 0:
+    plantObj = Wheat()
+  elif randNum == 1:
+    plantObj = Ragweed()
+  
   # Print plant information
-  print('Plant: ')
-  print(' |/')
-  print('\| ')
-  print(' |/')
-  print('\|/')
-  print('\| ')
-  print(' | ')
+  print('Plant: ',plantObj.name)
+  print(plantObj.pic)
   print('\n')
 
   # Print commands available to user
@@ -49,7 +72,7 @@ while userIn != 'quit' and userIn != 'q':
   # Execute command on user input
   userIn = input('Input: ')
   if userIn == 'harvest' or userIn == 'h':
-    p1.score += 10
+    p1.score += plantObj.score
   elif userIn == 'spray' or userIn == 's':
     pass
   else:

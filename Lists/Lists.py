@@ -29,7 +29,7 @@
 # List items can be accessed by referencing their index number.
 
 # numList = [1, 1, 2, 3, 5, 8, 13, 21]
-# print(numList[2])
+#print(numList[5])
 
 # # You can also access a range of items by specifying their indexes.
 
@@ -38,7 +38,7 @@
 
 # # To determine if a specific item is present in a list, use the in keyword
 
-# print(34 in numList)
+# print(13 in numList)
 
 
 # # *** Exercise - Change Lists - Kristen
